@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <MainCall />
+    <Home/>
   </div>
 </template>
 
 <script>
-import MainCall from "./components/MainCall.vue";
+import Home from "./views/Home.vue";
 
 export default {
   name: "App",
   components: {
-    MainCall,
+    Home
   },
 };
 </script>
