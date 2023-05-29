@@ -1,7 +1,12 @@
 <template>
-  <div>
+  <div class="home-container">
     <SideBar @data-updated="handleDataUpdated" />
-    <ImageContainer :selectedOption="selectedOption" :images="data"/>
+      <div v-if="data.length === 0" class="welcome-container">
+        <p>Welcome to the Mars Files! Please select a rover to load the images :)</p>
+      </div>
+      <div v-else>
+        <ImageContainer :selectedOption="selectedOption" :images="data" />
+      </div>
   </div>
 </template>
 
@@ -26,3 +31,26 @@ export default {
   },
 };
 </script>
+
+<style>
+.home-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 70%;
+  gap: 5%;
+}
+.welcome-container{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-family: sans-serif;
+  color: grey;
+  font-size: 25px;
+}
+</style>
+
+
+
+
+
+
